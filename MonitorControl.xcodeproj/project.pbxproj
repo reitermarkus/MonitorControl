@@ -44,6 +44,12 @@
 
 /* Begin PBXFileReference section */
 		28B7EEDA225F8E4F0077F99E /* AudioOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioOutput.swift; sourceTree = "<group>"; };
+		28B7EEDE225F9F770077F99E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		28B7EEDF225F9F780077F99E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		28B7EEE0225F9F780077F99E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		28B7EEE1225FA2A20077F99E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		28B7EEE2225FA2A50077F99E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		28B7EEE3225FA2AA0077F99E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		31E16D90527EBD3F8A12BE0B /* Pods-MonitorControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitorControl.release.xcconfig"; path = "Pods/Target Support Files/Pods-MonitorControl/Pods-MonitorControl.release.xcconfig"; sourceTree = "<group>"; };
 		398F482D5C8816B29F16AAEB /* Pods_MonitorControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonitorControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B61ABC1D7907131330228A /* Pods-MonitorControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonitorControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MonitorControl/Pods-MonitorControl.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,8 +69,6 @@
 		F0445D3B200254FA0025AE82 /* KeysPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysPrefsViewController.swift; sourceTree = "<group>"; };
 		F0445D3F200259C10025AE82 /* DisplayPrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayPrefsViewController.swift; sourceTree = "<group>"; };
 		F0445D42200282E60025AE82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F0445D45200282EB0025AE82 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
-		F0445D47200282F80025AE82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		F0445D49200285690025AE82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		F0445D4B2002856C0025AE82 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		F0445D4C200294AB0025AE82 /* ButtonCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCellView.swift; sourceTree = "<group>"; };
@@ -311,6 +315,7 @@
 				en,
 				Base,
 				fr,
+				de,
 			);
 			mainGroup = 56754EA21D9A4016007BCDC5;
 			productRefGroup = 56754EAC1D9A4016007BCDC5 /* Products */;
@@ -453,6 +458,7 @@
 				56754EB31D9A4016007BCDC5 /* Base */,
 				F0445D49200285690025AE82 /* en */,
 				F0445D4B2002856C0025AE82 /* fr */,
+				28B7EEDE225F9F770077F99E /* de */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -461,8 +467,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				F0445D42200282E60025AE82 /* Base */,
-				F0445D45200282EB0025AE82 /* fr */,
-				F0445D47200282F80025AE82 /* en */,
+				28B7EEE1225FA2A20077F99E /* fr */,
+				28B7EEE2225FA2A50077F99E /* de */,
+				28B7EEE3225FA2AA0077F99E /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -472,6 +479,7 @@
 			children = (
 				F091C9C21F6EB8660096FD65 /* en */,
 				F091C9C31F6EB8720096FD65 /* fr */,
+				28B7EEE0225F9F780077F99E /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -498,6 +506,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F0A987E11F77B404009B603D /* Base */,
+				28B7EEDF225F9F780077F99E /* de */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

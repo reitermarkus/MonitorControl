@@ -9,7 +9,7 @@
 "8U8-ec-Zbv.headerCell.title" = "Activé";
 
 /* Class = "NSTableColumn"; headerCell.title = "Display Name"; ObjectID = "CHc-s5-4MN"; */
-"CHc-s5-4MN.headerCell.title" = "Nom de l'écran";
+"CHc-s5-4MN.headerCell.title" = "Nom";
 
 /* Class = "NSTextFieldCell"; title = "Keys"; ObjectID = "Dcz-GG-1li"; */
 "Dcz-GG-1li.title" = "Touches";

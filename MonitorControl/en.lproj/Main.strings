@@ -9,7 +9,7 @@
 "8U8-ec-Zbv.headerCell.title" = "Enabled";
 
 /* Class = "NSTableColumn"; headerCell.title = "Display Name"; ObjectID = "CHc-s5-4MN"; */
-"CHc-s5-4MN.headerCell.title" = "Display Name";
+"CHc-s5-4MN.headerCell.title" = "Name";
 
 /* Class = "NSTextFieldCell"; title = "Keys"; ObjectID = "Dcz-GG-1li"; */
 "Dcz-GG-1li.title" = "Keys";
@@ -51,7 +51,7 @@
 "cUg-j2-8gt.title" = "Table View Cell";
 
 /* Class = "NSTableColumn"; headerCell.title = "Display Id"; ObjectID = "dgp-q7-cBK"; */
-"dgp-q7-cBK.headerCell.title" = "Display Id";
+"dgp-q7-cBK.headerCell.title" = "ID";
 
 /* Class = "NSMenuItem"; title = "Brightness only"; ObjectID = "hjz-0c-rvK"; */
 "hjz-0c-rvK.title" = "Brightness only";
