@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2877DE67225FBF0B0046812E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06792E9200A73460066C438 /* main.swift */; };
+		2877DE6A225FC4490046812E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56754EB01D9A4016007BCDC5 /* Assets.xcassets */; };
 		28B7EEDB225F8E4F0077F99E /* AudioOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7EEDA225F8E4F0077F99E /* AudioOutput.swift */; };
 		55359E391E2737EC002671BC /* DDC.c in Sources */ = {isa = PBXBuildFile; fileRef = 55359E331E2737EC002671BC /* DDC.c */; };
 		55359E3B1E2737EC002671BC /* ddcctl.sh in Resources */ = {isa = PBXBuildFile; fileRef = 55359E361E2737EC002671BC /* ddcctl.sh */; };
@@ -20,7 +22,6 @@
 		F0445D40200259C10025AE82 /* DisplayPrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0445D3F200259C10025AE82 /* DisplayPrefsViewController.swift */; };
 		F0445D41200282E60025AE82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0445D43200282E60025AE82 /* Main.storyboard */; };
 		F0445D4D200294AB0025AE82 /* ButtonCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0445D4C200294AB0025AE82 /* ButtonCellView.swift */; };
-		F06792EA200A73460066C438 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06792E9200A73460066C438 /* AppDelegate.swift */; };
 		F06792F6200A745F0066C438 /* MonitorControlHelper.app in [Login] Copy Helper to start at Login */ = {isa = PBXBuildFile; fileRef = F06792E7200A73460066C438 /* MonitorControlHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F091C9B31F6EA6110096FD65 /* SliderHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F091C9B21F6EA6110096FD65 /* SliderHandler.swift */; };
 		F091C9B81F6EA79B0096FD65 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F091C9B71F6EA79B0096FD65 /* Utils.swift */; };
@@ -73,7 +74,7 @@
 		F0445D4B2002856C0025AE82 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		F0445D4C200294AB0025AE82 /* ButtonCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCellView.swift; sourceTree = "<group>"; };
 		F06792E7200A73460066C438 /* MonitorControlHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitorControlHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F06792E9200A73460066C438 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F06792E9200A73460066C438 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		F06792F0200A73470066C438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F06792F1200A73470066C438 /* MonitorControlHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MonitorControlHelper.entitlements; sourceTree = "<group>"; };
 		F091C9B21F6EA6110096FD65 /* SliderHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHandler.swift; sourceTree = "<group>"; };
@@ -159,11 +160,11 @@
 				F0445D4C200294AB0025AE82 /* ButtonCellView.swift */,
 				F03A8DF11FFBAA6F0034DC27 /* Display.swift */,
 				F091C9B21F6EA6110096FD65 /* SliderHandler.swift */,
+				56754EB01D9A4016007BCDC5 /* Assets.xcassets */,
 				F0445D43200282E60025AE82 /* Main.storyboard */,
 				56754EB21D9A4016007BCDC5 /* MainMenu.xib */,
 				F0445D3620023D5B0025AE82 /* View Controllers */,
 				F091C9C41F6EBA5A0096FD65 /* Bridging-Header.h */,
-				56754EB01D9A4016007BCDC5 /* Assets.xcassets */,
 				F091C9C11F6EB8660096FD65 /* Localizable.strings */,
 				56754EB51D9A4016007BCDC5 /* Info.plist */,
 			);
@@ -192,7 +193,7 @@
 		F06792E8200A73460066C438 /* MonitorControlHelper */ = {
 			isa = PBXGroup;
 			children = (
-				F06792E9200A73460066C438 /* AppDelegate.swift */,
+				F06792E9200A73460066C438 /* main.swift */,
 				F06792F0200A73470066C438 /* Info.plist */,
 				F06792F1200A73470066C438 /* MonitorControlHelper.entitlements */,
 			);
@@ -264,6 +265,7 @@
 				F06792E3200A73460066C438 /* Sources */,
 				F06792E4200A73460066C438 /* Frameworks */,
 				F06792E5200A73460066C438 /* Resources */,
+				2877DE6B225FC7A90046812E /* Copy version from main application. */,
 			);
 			buildRules = (
 			);
@@ -337,12 +339,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2877DE6A225FC4490046812E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2877DE6B225FC7A90046812E /* Copy version from main application. */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy version from main application.";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "set -e\nset -u\nset -o pipefail\n\nmain_info_plist=\"${PROJECT_DIR}/${INFOPLIST_FILE/Helper/}\"\nhelper_info_plist=\"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion '$(/usr/libexec/PlistBuddy -c \"Print :CFBundleVersion\" \"${main_info_plist}\")'\" \"${helper_info_plist}\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString '$(/usr/libexec/PlistBuddy -c \"Print :CFBundleShortVersionString\" \"${main_info_plist}\")'\" \"${helper_info_plist}\"\n";
+		};
 		28B7EEDC225F99BF0077F99E /* [Format] Run SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -437,7 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F06792EA200A73460066C438 /* AppDelegate.swift in Sources */,
+				2877DE67225FBF0B0046812E /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +643,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 42B61ABC1D7907131330228A /* Pods-MonitorControl.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -641,6 +663,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 31E16D90527EBD3F8A12BE0B /* Pods-MonitorControl.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -671,7 +694,6 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = MonitorControlHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = me.guillaumeb.MonitorControlHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -694,7 +716,6 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = MonitorControlHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = me.guillaumeb.MonitorControlHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
