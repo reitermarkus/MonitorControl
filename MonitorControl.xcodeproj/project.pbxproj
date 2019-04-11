@@ -244,6 +244,7 @@
 			buildConfigurationList = 56754EB81D9A4016007BCDC5 /* Build configuration list for PBXNativeTarget "MonitorControl" */;
 			buildPhases = (
 				C0EF20D28FC7408CBE89A686 /* [CP] Check Pods Manifest.lock */,
+				28B7EEDC225F99BF0077F99E /* [Format] Run SwiftFormat */,
 				F03A8DF01FFB9D4C0034DC27 /* [Lint] Run SwiftLint */,
 				56754EA71D9A4016007BCDC5 /* Sources */,
 				56754EA81D9A4016007BCDC5 /* Frameworks */,
@@ -345,6 +346,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		28B7EEDC225F99BF0077F99E /* [Format] Run SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[Format] Run SwiftFormat";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
 		9DD5968596EFAF0E2EB56496 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -395,7 +414,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -9,15 +9,15 @@ class AudioOutput {
   }
 
   static func startListener() {
-    var address = AudioObjectPropertyAddress.init(mSelector: kAudioHardwarePropertyDefaultOutputDevice, mScope: kAudioObjectPropertyScopeGlobal, mElement: kAudioObjectPropertyElementMaster)
+    var address = AudioObjectPropertyAddress(mSelector: kAudioHardwarePropertyDefaultOutputDevice, mScope: kAudioObjectPropertyScopeGlobal, mElement: kAudioObjectPropertyElementMaster)
 
-    AudioObjectAddPropertyListener(AudioObjectID(kAudioObjectSystemObject), &address, audioOutputListenerProc, nil)
+    AudioObjectAddPropertyListener(AudioObjectID(kAudioObjectSystemObject), &address, self.audioOutputListenerProc, nil)
   }
 
   static func removeListener() {
-    var address = AudioObjectPropertyAddress.init(mSelector: kAudioHardwarePropertyDefaultOutputDevice, mScope: kAudioObjectPropertyScopeGlobal, mElement: kAudioObjectPropertyElementMaster)
+    var address = AudioObjectPropertyAddress(mSelector: kAudioHardwarePropertyDefaultOutputDevice, mScope: kAudioObjectPropertyScopeGlobal, mElement: kAudioObjectPropertyElementMaster)
 
-    AudioObjectRemovePropertyListener(AudioObjectID(kAudioObjectSystemObject), &address, audioOutputListenerProc, nil)
+    AudioObjectRemovePropertyListener(AudioObjectID(kAudioObjectSystemObject), &address, self.audioOutputListenerProc, nil)
   }
 
   let deviceID: AudioDeviceID
@@ -25,7 +25,7 @@ class AudioOutput {
   static func current() -> AudioOutput? {
     var deviceID = AudioDeviceID(0)
     var size = UInt32(MemoryLayout.size(ofValue: deviceID))
-    var address  = AudioObjectPropertyAddress(mSelector: kAudioHardwarePropertyDefaultOutputDevice, mScope: kAudioObjectPropertyScopeGlobal, mElement: kAudioObjectPropertyElementMaster)
+    var address = AudioObjectPropertyAddress(mSelector: kAudioHardwarePropertyDefaultOutputDevice, mScope: kAudioObjectPropertyScopeGlobal, mElement: kAudioObjectPropertyElementMaster)
 
     guard AudioObjectGetPropertyData(AudioObjectID(kAudioObjectSystemObject), &address, 0, nil, &size, &deviceID) == kAudioHardwareNoError else {
       return nil
@@ -54,7 +54,7 @@ class AudioOutput {
     let count = Int(size) / MemoryLayout<OSType>.size
     let sources = UnsafeMutablePointer<UInt8>.allocate(capacity: Int(size))
 
-    guard AudioObjectGetPropertyData (deviceID, &address, 0, nil, &size, sources) == kAudioHardwareNoError else {
+    guard AudioObjectGetPropertyData(deviceID, &address, 0, nil, &size, sources) == kAudioHardwareNoError else {
       return nil
     }
 
@@ -80,7 +80,7 @@ class AudioOutput {
       return nil
     }
 
-    return String.init(cString: buffer)
+    return String(cString: buffer)
   }
 
   static func getDataSourceName(for dataSourceID: OSType, deviceID: AudioDeviceID) -> String? {
@@ -104,7 +104,7 @@ class AudioOutput {
       return nil
     }
 
-    return String.init(cString: buffer)
+    return String(cString: buffer)
   }
 
   static func getOutputDataSourceID(for deviceID: AudioDeviceID) -> OSType? {
