@@ -42,8 +42,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, MediaKeyTapDelegate {
 		]
 		prefsController = MASPreferencesWindowController(viewControllers: views, title: NSLocalizedString("Preferences", comment: "Shown in Preferences window"))
 
-		NotificationCenter.default.addObserver(self, selector: #selector(handleListenForChanged), name: NSNotification.Name.init(Utils.PrefKeys.listenFor.rawValue), object: nil)
-		NotificationCenter.default.addObserver(self, selector: #selector(handleShowContrastChanged), name: NSNotification.Name.init(Utils.PrefKeys.showContrast.rawValue), object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(handleListenForChanged), name: NSNotification.Name(Utils.PrefKeys.listenFor.rawValue), object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(handleShowContrastChanged), name: NSNotification.Name(Utils.PrefKeys.showContrast.rawValue), object: nil)
 
 		statusItem.image = NSImage.init(named: "status")
         statusItem.menu = statusMenu
@@ -56,9 +56,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, MediaKeyTapDelegate {
         updateDisplays()
 
       startOrRestartMediaKeyTap()
+
+      AudioOutput.startListener()
+      NotificationCenter.default.addObserver(self, selector: #selector(handleAudioOutputChange), name: AudioOutput.changedNotification, object: nil)
     }
 
 	func applicationWillTerminate(_ aNotification: Notification) {
+    AudioOutput.removeListener()
 	}
 
 	@IBAction func quitClicked(_ sender: AnyObject) {
@@ -116,6 +120,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, MediaKeyTapDelegate {
 
 				// Does screen support EDID ?
 				var edid = EDID()
+
 				if !EDIDTest(id, &edid) {
 					return false
 				}
@@ -240,6 +245,26 @@ class AppDelegate: NSObject, NSApplicationDelegate, MediaKeyTapDelegate {
       keysListenedFor = [.brightnessUp, .brightnessDown, .mute, .volumeUp, .volumeDown]
     }
 
+    let useVolumeControlForAllDisplays = displays.allSatisfy {
+      if let audioDeviceName = AudioOutput.current()?.name() {
+        return $0.name == audioDeviceName
+      } else {
+        return false
+      }
+    }
+
+    if useVolumeControlForAllDisplays {
+      #if DEBUG
+      print("Volume control for all displays is now on.")
+      #endif
+    } else {
+      #if DEBUG
+      print("Volume control for all displays is now off.")
+      #endif
+
+      keysListenedFor = [.brightnessUp, .brightnessDown]
+    }
+
     mediaKeyTap?.stop()
     mediaKeyTap = MediaKeyTap.init(delegate: self, for: keysListenedFor, observeBuiltIn: false)
     mediaKeyTap?.start()
@@ -249,4 +274,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, MediaKeyTapDelegate {
 		self.updateDisplays()
 	}
 
+  @objc func handleAudioOutputChange() {
+    startOrRestartMediaKeyTap()
+  }
 }
