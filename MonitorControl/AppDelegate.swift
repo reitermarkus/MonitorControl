@@ -31,19 +31,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, MediaKeyTapDelegate {
 	var mediaKeyTap: MediaKeyTap?
 	var prefsController: NSWindowController?
 
-	var keysListenedFor: [MediaKey] = [.brightnessUp, .brightnessDown, .mute, .volumeUp, .volumeDown]
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         app = self
 
-		let listenFor = prefs.integer(forKey: Utils.PrefKeys.listenFor.rawValue)
-		if listenFor == Utils.ListenForKeys.brightnessOnlyKeys.rawValue {
-			keysListenedFor.removeSubrange(2...4)
-		} else if listenFor == Utils.ListenForKeys.volumeOnlyKeys.rawValue {
-			keysListenedFor.removeSubrange(0...1)
-		}
-
-		mediaKeyTap = MediaKeyTap.init(delegate: self, for: keysListenedFor, observeBuiltIn: false)
 		let storyboard: NSStoryboard = NSStoryboard.init(name: "Main", bundle: Bundle.main)
 		let views = [
 			storyboard.instantiateController(withIdentifier: "MainPrefsVC"),
@@ -65,7 +55,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, MediaKeyTapDelegate {
         CGDisplayRegisterReconfigurationCallback({_, _, _ in app.updateDisplays()}, nil)
         updateDisplays()
 
-		mediaKeyTap?.start()
+      startOrRestartMediaKeyTap()
     }
 
 	func applicationWillTerminate(_ aNotification: Notification) {
@@ -234,18 +224,26 @@ class AppDelegate: NSObject, NSApplicationDelegate, MediaKeyTapDelegate {
 	// MARK: - Prefs notification
 
 	@objc func handleListenForChanged() {
-		let listenFor = prefs.integer(forKey: Utils.PrefKeys.listenFor.rawValue)
-		keysListenedFor = [.brightnessUp, .brightnessDown, .mute, .volumeUp, .volumeDown]
-		if listenFor == Utils.ListenForKeys.brightnessOnlyKeys.rawValue {
-			keysListenedFor.removeSubrange(2...4)
-		} else if listenFor == Utils.ListenForKeys.volumeOnlyKeys.rawValue {
-			keysListenedFor.removeSubrange(0...1)
-		}
-
-		mediaKeyTap?.stop()
-		mediaKeyTap = MediaKeyTap.init(delegate: self, for: keysListenedFor, observeBuiltIn: false)
-		mediaKeyTap?.start()
+    startOrRestartMediaKeyTap()
 	}
+
+  @objc func startOrRestartMediaKeyTap() {
+    let listenFor = prefs.integer(forKey: Utils.PrefKeys.listenFor.rawValue)
+
+    var keysListenedFor: [MediaKey]!
+
+    if listenFor == Utils.ListenForKeys.brightnessOnlyKeys.rawValue {
+      keysListenedFor = [.brightnessUp, .brightnessDown]
+    } else if listenFor == Utils.ListenForKeys.volumeOnlyKeys.rawValue {
+      keysListenedFor = [.mute, .volumeUp, .volumeDown]
+    } else {
+      keysListenedFor = [.brightnessUp, .brightnessDown, .mute, .volumeUp, .volumeDown]
+    }
+
+    mediaKeyTap?.stop()
+    mediaKeyTap = MediaKeyTap.init(delegate: self, for: keysListenedFor, observeBuiltIn: false)
+    mediaKeyTap?.start()
+  }
 
 	@objc func handleShowContrastChanged() {
 		self.updateDisplays()
