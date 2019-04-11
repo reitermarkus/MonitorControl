@@ -156,10 +156,12 @@
 				56754EAE1D9A4016007BCDC5 /* AppDelegate.swift */,
 				F091C9B71F6EA79B0096FD65 /* Utils.swift */,
 				28B7EEDA225F8E4F0077F99E /* AudioOutput.swift */,
+				F0445D4C200294AB0025AE82 /* ButtonCellView.swift */,
+				F03A8DF11FFBAA6F0034DC27 /* Display.swift */,
+				F091C9B21F6EA6110096FD65 /* SliderHandler.swift */,
 				F0445D43200282E60025AE82 /* Main.storyboard */,
 				56754EB21D9A4016007BCDC5 /* MainMenu.xib */,
-				F0445D3620023D5B0025AE82 /* Prefs */,
-				F091C9B41F6EA6180096FD65 /* Objects */,
+				F0445D3620023D5B0025AE82 /* View Controllers */,
 				F091C9C41F6EBA5A0096FD65 /* Bridging-Header.h */,
 				56754EB01D9A4016007BCDC5 /* Assets.xcassets */,
 				F091C9C11F6EB8660096FD65 /* Localizable.strings */,
@@ -177,14 +179,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F0445D3620023D5B0025AE82 /* Prefs */ = {
+		F0445D3620023D5B0025AE82 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				F0445D3720023E710025AE82 /* MainPrefsViewController.swift */,
 				F0445D3B200254FA0025AE82 /* KeysPrefsViewController.swift */,
 				F0445D3F200259C10025AE82 /* DisplayPrefsViewController.swift */,
 			);
-			path = Prefs;
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		F06792E8200A73460066C438 /* MonitorControlHelper */ = {
@@ -195,16 +197,6 @@
 				F06792F1200A73470066C438 /* MonitorControlHelper.entitlements */,
 			);
 			path = MonitorControlHelper;
-			sourceTree = "<group>";
-		};
-		F091C9B41F6EA6180096FD65 /* Objects */ = {
-			isa = PBXGroup;
-			children = (
-				F0445D4C200294AB0025AE82 /* ButtonCellView.swift */,
-				F091C9B21F6EA6110096FD65 /* SliderHandler.swift */,
-				F03A8DF11FFBAA6F0034DC27 /* Display.swift */,
-			);
-			path = Objects;
 			sourceTree = "<group>";
 		};
 		F0A987D71F77B404009B603D /* Frameworks */ = {
