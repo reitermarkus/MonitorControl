@@ -11,10 +11,10 @@
 "Display" = "Monitor";
 
 /* Shown in menu */
-"No supported display found" = "No supported display found";
+"No supported display found" = "Kein unterstützter Monitor angeschlossen";
 
 /* Shown in menu */
-"Set as default" = "Set as default";
+"Set as default" = "Als Standard festlegen";
 
 /* No comment provided by engineer. */
 "Unknown" = "Unbekannt";
@@ -29,7 +29,7 @@
 "Ok" = "OK";
 
 /* Shown in the alert dialog */
-"Shortcuts not available" = "Shortcuts not available";
+"Shortcuts not available" = "Kurzbefehle nicht verfügbar";
 
 /* Shown in the alert dialog */
 "You need to enable MonitorControl in System Preferences > Security and Privacy > Accessibility for the keyboard shortcuts to work" = "Du musst MonitorControl in Systemeinstellungen > Sicherheit > Datenschutz > Bedienungshilfen aktivieren, damit die Kurzbefehle funktionieren.";
