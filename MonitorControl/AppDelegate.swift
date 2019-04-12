@@ -1,4 +1,5 @@
 import Cocoa
+import DDCKit
 import Foundation
 import MASPreferences
 import MediaKeyTap
@@ -108,14 +109,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, MediaKeyTapDelegate {
           return false
         }
 
-        // Does screen support EDID ?
-        var edid = EDID()
-
-        if !EDIDTest(id, &edid) {
-          return false
-        }
-
-        return true
+        return DDC(for: id)?.edid() != nil
       }
       return false
     }
@@ -145,26 +139,27 @@ class AppDelegate: NSObject, NSApplicationDelegate, MediaKeyTapDelegate {
   ///   - asSubMenu: Display in a sub menu or directly in menu
   private func addScreenToMenu(screen: NSScreen, asSubMenu: Bool) {
     if let id = screen.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? CGDirectDisplayID {
-      var edid = EDID()
-      if EDIDTest(id, &edid) {
-        let name = Utils.getDisplayName(forEdid: edid)
-        let serial = Utils.getDisplaySerial(forEdid: edid)
+      let ddc = DDC(for: id)
 
-        let display = Display(id, name: name, serial: serial)
+      if let edid = ddc?.edid() {
+        let name = Utils.getDisplayName(forEdid: edid)
+
+        let display = Display(id, name: name)
 
         let monitorSubMenu: NSMenu = asSubMenu ? NSMenu() : self.statusMenu
+
         let volumeSliderHandler = Utils.addSliderMenuItem(toMenu: monitorSubMenu,
                                                           forDisplay: display,
-                                                          command: AUDIO_SPEAKER_VOLUME,
+                                                          command: .audioSpeakerVolume,
                                                           title: NSLocalizedString("Volume", comment: "Shown in menu"))
         let brightnessSliderHandler = Utils.addSliderMenuItem(toMenu: monitorSubMenu,
                                                               forDisplay: display,
-                                                              command: BRIGHTNESS,
+                                                              command: .brightness,
                                                               title: NSLocalizedString("Brightness", comment: "Shown in menu"))
         if prefs.bool(forKey: Utils.PrefKeys.showContrast.rawValue) {
           let contrastSliderHandler = Utils.addSliderMenuItem(toMenu: monitorSubMenu,
                                                               forDisplay: display,
-                                                              command: CONTRAST,
+                                                              command: .contrast,
                                                               title: NSLocalizedString("Contrast", comment: "Shown in menu"))
           display.contrastSliderHandler = contrastSliderHandler
         }
@@ -194,18 +189,18 @@ class AppDelegate: NSObject, NSApplicationDelegate, MediaKeyTapDelegate {
       if (prefs.object(forKey: "\(display.identifier)-state") as? Bool) ?? true {
         switch mediaKey {
         case .brightnessUp:
-          let value = display.calcNewValue(for: BRIGHTNESS, withRel: +self.step)
+          let value = display.calcNewValue(for: .brightness, withRel: +self.step)
           display.setBrightness(to: value)
         case .brightnessDown:
-          let value = currentDisplay.calcNewValue(for: BRIGHTNESS, withRel: -self.step)
+          let value = currentDisplay.calcNewValue(for: .brightness, withRel: -self.step)
           display.setBrightness(to: value)
         case .mute:
           display.mute()
         case .volumeUp:
-          let value = display.calcNewValue(for: AUDIO_SPEAKER_VOLUME, withRel: +self.step)
+          let value = display.calcNewValue(for: .audioSpeakerVolume, withRel: +self.step)
           display.setVolume(to: value)
         case .volumeDown:
-          let value = display.calcNewValue(for: AUDIO_SPEAKER_VOLUME, withRel: -self.step)
+          let value = display.calcNewValue(for: .audioSpeakerVolume, withRel: -self.step)
           display.setVolume(to: value)
         default:
           return

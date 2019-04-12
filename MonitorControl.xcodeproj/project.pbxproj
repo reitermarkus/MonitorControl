@@ -15,8 +15,11 @@
 		2899041B226005F5004CBB6F /* MediaKeyTap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 28990415226005B4004CBB6F /* MediaKeyTap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2899042022600637004CBB6F /* MASPreferences.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = 2899041E22600637004CBB6F /* MASPreferences.framework.dSYM */; };
 		2899042122600637004CBB6F /* MediaKeyTap.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = 2899041F22600637004CBB6F /* MediaKeyTap.framework.dSYM */; };
+		2899043722602852004CBB6F /* DDCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2899043622602852004CBB6F /* DDCKit.framework */; };
+		2899043822602852004CBB6F /* DDCKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2899043622602852004CBB6F /* DDCKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2899043A22602862004CBB6F /* DDCKit.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = 2899043922602862004CBB6F /* DDCKit.framework.dSYM */; };
+		2899043D22602D82004CBB6F /* EDID+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899043C22602D82004CBB6F /* EDID+Extension.swift */; };
 		28B7EEDB225F8E4F0077F99E /* AudioOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7EEDA225F8E4F0077F99E /* AudioOutput.swift */; };
-		55359E391E2737EC002671BC /* DDC.c in Sources */ = {isa = PBXBuildFile; fileRef = 55359E331E2737EC002671BC /* DDC.c */; };
 		55359E3B1E2737EC002671BC /* ddcctl.sh in Resources */ = {isa = PBXBuildFile; fileRef = 55359E361E2737EC002671BC /* ddcctl.sh */; };
 		56754EAF1D9A4016007BCDC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56754EAE1D9A4016007BCDC5 /* AppDelegate.swift */; };
 		56754EB11D9A4016007BCDC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56754EB01D9A4016007BCDC5 /* Assets.xcassets */; };
@@ -43,6 +46,7 @@
 			files = (
 				28990419226005F5004CBB6F /* MASPreferences.framework in Embed Frameworks */,
 				2899041B226005F5004CBB6F /* MediaKeyTap.framework in Embed Frameworks */,
+				2899043822602852004CBB6F /* DDCKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +57,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				2899043A22602862004CBB6F /* DDCKit.framework.dSYM in Copy Framework Debug Symbols */,
 				2899042022600637004CBB6F /* MASPreferences.framework.dSYM in Copy Framework Debug Symbols */,
 				2899042122600637004CBB6F /* MediaKeyTap.framework.dSYM in Copy Framework Debug Symbols */,
 			);
@@ -77,6 +82,9 @@
 		28990415226005B4004CBB6F /* MediaKeyTap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaKeyTap.framework; path = Carthage/Build/Mac/MediaKeyTap.framework; sourceTree = "<group>"; };
 		2899041E22600637004CBB6F /* MASPreferences.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = MASPreferences.framework.dSYM; sourceTree = "<group>"; };
 		2899041F22600637004CBB6F /* MediaKeyTap.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = MediaKeyTap.framework.dSYM; sourceTree = "<group>"; };
+		2899043622602852004CBB6F /* DDCKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DDCKit.framework; path = Carthage/Build/Mac/DDCKit.framework; sourceTree = "<group>"; };
+		2899043922602862004CBB6F /* DDCKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = DDCKit.framework.dSYM; path = Carthage/Build/Mac/DDCKit.framework.dSYM; sourceTree = "<group>"; };
+		2899043C22602D82004CBB6F /* EDID+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EDID+Extension.swift"; sourceTree = "<group>"; };
 		28B7EEDA225F8E4F0077F99E /* AudioOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioOutput.swift; sourceTree = "<group>"; };
 		28B7EEDE225F9F770077F99E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		28B7EEDF225F9F780077F99E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MainMenu.strings; sourceTree = "<group>"; };
@@ -84,12 +92,6 @@
 		28B7EEE1225FA2A20077F99E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		28B7EEE2225FA2A50077F99E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		28B7EEE3225FA2AA0077F99E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		55359E331E2737EC002671BC /* DDC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DDC.c; sourceTree = "<group>"; };
-		55359E341E2737EC002671BC /* DDC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDC.h; sourceTree = "<group>"; };
-		55359E351E2737EC002671BC /* ddcctl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ddcctl.m; sourceTree = "<group>"; };
-		55359E361E2737EC002671BC /* ddcctl.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ddcctl.sh; sourceTree = "<group>"; };
-		55359E371E2737EC002671BC /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		55359E381E2737EC002671BC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		56754EAB1D9A4016007BCDC5 /* MonitorControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonitorControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56754EAE1D9A4016007BCDC5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56754EB01D9A4016007BCDC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				F0A987E81F77B40E009B603D /* OSD.framework in Frameworks */,
 				28990418226005F5004CBB6F /* MASPreferences.framework in Frameworks */,
 				2899041A226005F5004CBB6F /* MediaKeyTap.framework in Frameworks */,
+				2899043722602852004CBB6F /* DDCKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,17 +150,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		55359E321E2737EC002671BC /* ddcctl */ = {
+		2899043B22602D65004CBB6F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				55359E331E2737EC002671BC /* DDC.c */,
-				55359E341E2737EC002671BC /* DDC.h */,
-				55359E351E2737EC002671BC /* ddcctl.m */,
-				55359E361E2737EC002671BC /* ddcctl.sh */,
-				55359E371E2737EC002671BC /* Makefile */,
-				55359E381E2737EC002671BC /* README.md */,
+				2899043C22602D82004CBB6F /* EDID+Extension.swift */,
 			);
-			path = ddcctl;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		56754EA21D9A4016007BCDC5 = {
@@ -184,6 +182,7 @@
 		56754EAD1D9A4016007BCDC5 /* MonitorControl */ = {
 			isa = PBXGroup;
 			children = (
+				2899043B22602D65004CBB6F /* Extensions */,
 				56754EAE1D9A4016007BCDC5 /* AppDelegate.swift */,
 				F091C9B71F6EA79B0096FD65 /* Utils.swift */,
 				28B7EEDA225F8E4F0077F99E /* AudioOutput.swift */,
@@ -224,6 +223,8 @@
 		F0A987D71F77B404009B603D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2899043622602852004CBB6F /* DDCKit.framework */,
+				2899043922602862004CBB6F /* DDCKit.framework.dSYM */,
 				28990414226005B4004CBB6F /* MASPreferences.framework */,
 				2899041E22600637004CBB6F /* MASPreferences.framework.dSYM */,
 				28990415226005B4004CBB6F /* MediaKeyTap.framework */,
@@ -431,12 +432,12 @@
 				F03A8DF21FFBAA6F0034DC27 /* Display.swift in Sources */,
 				F091C9B31F6EA6110096FD65 /* SliderHandler.swift in Sources */,
 				56754EAF1D9A4016007BCDC5 /* AppDelegate.swift in Sources */,
-				55359E391E2737EC002671BC /* DDC.c in Sources */,
 				F0445D3820023E710025AE82 /* MainPrefsViewController.swift in Sources */,
 				F0445D3D200254FA0025AE82 /* KeysPrefsViewController.swift in Sources */,
 				F091C9B81F6EA79B0096FD65 /* Utils.swift in Sources */,
 				F0445D4D200294AB0025AE82 /* ButtonCellView.swift in Sources */,
 				28B7EEDB225F8E4F0077F99E /* AudioOutput.swift in Sources */,
+				2899043D22602D82004CBB6F /* EDID+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,7 +565,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -618,7 +619,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -682,12 +683,13 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KJ5F4KTDFH;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = MonitorControlHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.guillaumeb.MonitorControlHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -704,12 +706,13 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KJ5F4KTDFH;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = MonitorControlHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.guillaumeb.MonitorControlHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
