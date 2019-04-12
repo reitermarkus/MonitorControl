@@ -99,9 +99,7 @@ class Utils: NSObject {
   static func getCurrentDisplay(from displays: [Display]) -> Display? {
     return displays.first { display -> Bool in
       if let main = NSScreen.main {
-        if let id = main.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? CGDirectDisplayID {
-          return display.identifier == id
-        }
+        return display.identifier == main.displayID()
       }
       return false
     }

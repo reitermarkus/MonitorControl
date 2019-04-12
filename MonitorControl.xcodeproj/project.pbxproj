@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		285EE94222612ED400C0A10C /* NSScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285EE94122612ED400C0A10C /* NSScreen+Extension.swift */; };
 		2877DE67225FBF0B0046812E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06792E9200A73460066C438 /* main.swift */; };
 		2877DE6A225FC4490046812E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56754EB01D9A4016007BCDC5 /* Assets.xcassets */; };
 		28990418226005F5004CBB6F /* MASPreferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28990414226005B4004CBB6F /* MASPreferences.framework */; };
 		28990419226005F5004CBB6F /* MASPreferences.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 28990414226005B4004CBB6F /* MASPreferences.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2899041A226005F5004CBB6F /* MediaKeyTap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28990415226005B4004CBB6F /* MediaKeyTap.framework */; };
 		2899041B226005F5004CBB6F /* MediaKeyTap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 28990415226005B4004CBB6F /* MediaKeyTap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2899042022600637004CBB6F /* MASPreferences.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = 2899041E22600637004CBB6F /* MASPreferences.framework.dSYM */; };
-		2899042122600637004CBB6F /* MediaKeyTap.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = 2899041F22600637004CBB6F /* MediaKeyTap.framework.dSYM */; };
+		2899042022600637004CBB6F /* Carthage/Build/Mac/MASPreferences.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = 2899041E22600637004CBB6F /* Carthage/Build/Mac/MASPreferences.framework.dSYM */; };
+		2899042122600637004CBB6F /* Carthage/Build/Mac/MediaKeyTap.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = 2899041F22600637004CBB6F /* Carthage/Build/Mac/MediaKeyTap.framework.dSYM */; };
 		2899043722602852004CBB6F /* DDC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2899043622602852004CBB6F /* DDC.framework */; };
 		2899043822602852004CBB6F /* DDC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2899043622602852004CBB6F /* DDC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2899043A22602862004CBB6F /* DDC.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = 2899043922602862004CBB6F /* DDC.framework.dSYM */; };
@@ -58,8 +59,8 @@
 			dstSubfolderSpec = 16;
 			files = (
 				2899043A22602862004CBB6F /* DDC.framework.dSYM in Copy Framework Debug Symbols */,
-				2899042022600637004CBB6F /* MASPreferences.framework.dSYM in Copy Framework Debug Symbols */,
-				2899042122600637004CBB6F /* MediaKeyTap.framework.dSYM in Copy Framework Debug Symbols */,
+				2899042022600637004CBB6F /* Carthage/Build/Mac/MASPreferences.framework.dSYM in Copy Framework Debug Symbols */,
+				2899042122600637004CBB6F /* Carthage/Build/Mac/MediaKeyTap.framework.dSYM in Copy Framework Debug Symbols */,
 			);
 			name = "Copy Framework Debug Symbols";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,10 +79,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		285EE94122612ED400C0A10C /* NSScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScreen+Extension.swift"; sourceTree = "<group>"; };
 		28990414226005B4004CBB6F /* MASPreferences.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MASPreferences.framework; path = Carthage/Build/Mac/MASPreferences.framework; sourceTree = "<group>"; };
 		28990415226005B4004CBB6F /* MediaKeyTap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaKeyTap.framework; path = Carthage/Build/Mac/MediaKeyTap.framework; sourceTree = "<group>"; };
-		2899041E22600637004CBB6F /* MASPreferences.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = Carthage/Build/Mac/MASPreferences.framework.dSYM; sourceTree = "<group>"; };
-		2899041F22600637004CBB6F /* MediaKeyTap.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = Carthage/Build/Mac/MediaKeyTap.framework.dSYM; sourceTree = "<group>"; };
+		2899041E22600637004CBB6F /* Carthage/Build/Mac/MASPreferences.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = Carthage/Build/Mac/MASPreferences.framework.dSYM; sourceTree = "<group>"; };
+		2899041F22600637004CBB6F /* Carthage/Build/Mac/MediaKeyTap.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = Carthage/Build/Mac/MediaKeyTap.framework.dSYM; sourceTree = "<group>"; };
 		2899043622602852004CBB6F /* DDC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DDC.framework; path = Carthage/Build/Mac/DDC.framework; sourceTree = "<group>"; };
 		2899043922602862004CBB6F /* DDC.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = DDC.framework.dSYM; path = Carthage/Build/Mac/DDC.framework.dSYM; sourceTree = "<group>"; };
 		2899043C22602D82004CBB6F /* EDID+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EDID+Extension.swift"; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				2899043C22602D82004CBB6F /* EDID+Extension.swift */,
+				285EE94122612ED400C0A10C /* NSScreen+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -225,9 +228,9 @@
 				2899043622602852004CBB6F /* DDC.framework */,
 				2899043922602862004CBB6F /* DDC.framework.dSYM */,
 				28990414226005B4004CBB6F /* MASPreferences.framework */,
-				2899041E22600637004CBB6F /* MASPreferences.framework.dSYM */,
+				2899041E22600637004CBB6F /* Carthage/Build/Mac/MASPreferences.framework.dSYM */,
 				28990415226005B4004CBB6F /* MediaKeyTap.framework */,
-				2899041F22600637004CBB6F /* MediaKeyTap.framework.dSYM */,
+				2899041F22600637004CBB6F /* Carthage/Build/Mac/MediaKeyTap.framework.dSYM */,
 				F0A987D81F77B404009B603D /* MonitorControl */,
 			);
 			name = Frameworks;
@@ -326,10 +329,9 @@
 			};
 			buildConfigurationList = 56754EA61D9A4016007BCDC5 /* Build configuration list for PBXProject "MonitorControl" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 				fr,
@@ -427,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				285EE94222612ED400C0A10C /* NSScreen+Extension.swift in Sources */,
 				F0445D40200259C10025AE82 /* DisplayPrefsViewController.swift in Sources */,
 				F03A8DF21FFBAA6F0034DC27 /* Display.swift in Sources */,
 				F091C9B31F6EA6110096FD65 /* SliderHandler.swift in Sources */,
