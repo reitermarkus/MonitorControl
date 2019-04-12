@@ -1,5 +1,5 @@
 import Cocoa
-import DDCKit
+import DDC
 import Foundation
 import MASPreferences
 import MediaKeyTap

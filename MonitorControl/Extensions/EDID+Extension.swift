@@ -1,4 +1,4 @@
-import DDCKit
+import DDC
 
 extension EDID {
   public func displayName() -> String? {

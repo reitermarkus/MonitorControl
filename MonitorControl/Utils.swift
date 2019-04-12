@@ -1,5 +1,5 @@
 import Cocoa
-import DDCKit
+import DDC
 
 class Utils: NSObject {
   // MARK: - Menu

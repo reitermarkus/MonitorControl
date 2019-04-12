@@ -1,5 +1,5 @@
 import Cocoa
-import DDCKit
+import DDC
 import MASPreferences
 
 class DisplayPrefsViewController: NSViewController, MASPreferencesViewController, NSTableViewDataSource, NSTableViewDelegate {
