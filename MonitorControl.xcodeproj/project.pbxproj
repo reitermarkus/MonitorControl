@@ -20,7 +20,7 @@
 		2899043A22602862004CBB6F /* DDCKit.framework.dSYM in Copy Framework Debug Symbols */ = {isa = PBXBuildFile; fileRef = 2899043922602862004CBB6F /* DDCKit.framework.dSYM */; };
 		2899043D22602D82004CBB6F /* EDID+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899043C22602D82004CBB6F /* EDID+Extension.swift */; };
 		28B7EEDB225F8E4F0077F99E /* AudioOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B7EEDA225F8E4F0077F99E /* AudioOutput.swift */; };
-		55359E3B1E2737EC002671BC /* ddcctl.sh in Resources */ = {isa = PBXBuildFile; fileRef = 55359E361E2737EC002671BC /* ddcctl.sh */; };
+		55359E3B1E2737EC002671BC /* (null) in Resources */ = {isa = PBXBuildFile; };
 		56754EAF1D9A4016007BCDC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56754EAE1D9A4016007BCDC5 /* AppDelegate.swift */; };
 		56754EB11D9A4016007BCDC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56754EB01D9A4016007BCDC5 /* Assets.xcassets */; };
 		56754EB41D9A4016007BCDC5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56754EB21D9A4016007BCDC5 /* MainMenu.xib */; };
@@ -163,7 +163,6 @@
 			children = (
 				56754EAD1D9A4016007BCDC5 /* MonitorControl */,
 				F0A987D61F77B290009B603D /* OSD.framework */,
-				55359E321E2737EC002671BC /* ddcctl */,
 				F06792E8200A73460066C438 /* MonitorControlHelper */,
 				56754EAC1D9A4016007BCDC5 /* Products */,
 				F0A987D71F77B404009B603D /* Frameworks */,
@@ -355,7 +354,7 @@
 				56754EB11D9A4016007BCDC5 /* Assets.xcassets in Resources */,
 				F0445D41200282E60025AE82 /* Main.storyboard in Resources */,
 				F0EB972F1F6ED7C800686D2A /* Localizable.strings in Resources */,
-				55359E3B1E2737EC002671BC /* ddcctl.sh in Resources */,
+				55359E3B1E2737EC002671BC /* (null) in Resources */,
 				56754EB41D9A4016007BCDC5 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
