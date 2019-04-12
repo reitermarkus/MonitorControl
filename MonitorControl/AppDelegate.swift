@@ -103,7 +103,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, MediaKeyTapDelegate {
     self.clearDisplays()
 
     var filteredScreens = NSScreen.screens.filter { screen -> Bool in
-      let id = screen.displayID()
+      let id = screen.displayID
 
       // Is Built In Screen (e.g. MBP/iMac Screen)
       if CGDisplayIsBuiltin(id) != 0 {
@@ -137,7 +137,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, MediaKeyTapDelegate {
   ///   - screen: The screen to add
   ///   - asSubMenu: Display in a sub menu or directly in menu
   private func addScreenToMenu(screen: NSScreen, asSubMenu: Bool) {
-    let id = screen.displayID()
+    let id = screen.displayID
     let ddc = DDC(for: id)
 
     if let edid = ddc?.edid() {

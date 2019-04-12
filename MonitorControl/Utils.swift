@@ -97,7 +97,7 @@ class Utils: NSObject {
   /// - Parameter displays: List of Display
   /// - Returns: the main display or nil if not found
   static func getCurrentDisplay(from displays: [Display]) -> Display? {
-    guard let mainDisplayID = NSScreen.main?.displayID() else {
+    guard let mainDisplayID = NSScreen.main?.displayID else {
       return nil
     }
 

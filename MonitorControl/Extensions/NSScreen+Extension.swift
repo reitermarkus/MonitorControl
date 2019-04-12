@@ -1,7 +1,7 @@
 import Cocoa
 
 extension NSScreen {
-  public func displayID() -> CGDirectDisplayID {
+  public var displayID: CGDirectDisplayID {
     return (self.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? CGDirectDisplayID)!
   }
 }

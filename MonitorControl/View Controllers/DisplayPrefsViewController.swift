@@ -44,7 +44,7 @@ class DisplayPrefsViewController: NSViewController, MASPreferencesViewController
 
   func loadDisplayList() {
     for screen in NSScreen.screens {
-      let id = screen.displayID()
+      let id = screen.displayID
 
       // Is Built In Screen (e.g. MBP/iMac Screen)
       if CGDisplayIsBuiltin(id) != 0 {
