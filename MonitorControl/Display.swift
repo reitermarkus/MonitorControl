@@ -20,6 +20,22 @@ class Display {
     self.ddc = DDC(for: identifier)
   }
 
+  func hideDisplayOsd() {
+    _ = self.ddc?.write(command: .onScreenDisplay, value: 1)
+
+    DispatchQueue.global(qos: .background).asyncAfter(deadline: DispatchTime.now() + 0.000001) {
+      _ = self.ddc?.write(command: .onScreenDisplay, value: 1)
+    }
+
+    DispatchQueue.global(qos: .background).asyncAfter(deadline: DispatchTime.now() + 0.00001) {
+      _ = self.ddc?.write(command: .onScreenDisplay, value: 1)
+    }
+
+    DispatchQueue.global(qos: .background).asyncAfter(deadline: DispatchTime.now() + 0.0001) {
+      _ = self.ddc?.write(command: .onScreenDisplay, value: 1)
+    }
+  }
+
   func mute() {
     var value = 0
     if self.isMuted {
@@ -30,10 +46,12 @@ class Display {
     }
 
     _ = self.ddc?.write(command: .audioSpeakerVolume, value: UInt8(value))
+    self.hideDisplayOsd()
 
     if let slider = volumeSliderHandler?.slider {
       slider.intValue = Int32(value)
     }
+
     self.showOsd(command: .audioSpeakerVolume, value: value)
   }
 
@@ -43,6 +61,7 @@ class Display {
     }
 
     _ = self.ddc?.write(command: .audioSpeakerVolume, value: UInt8(value))
+    self.hideDisplayOsd()
 
     if let slider = volumeSliderHandler?.slider {
       slider.intValue = Int32(value)
