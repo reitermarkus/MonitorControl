@@ -128,6 +128,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, MediaKeyTapDelegate {
       item.isEnabled = false
       self.monitorItems.append(item)
       self.statusMenu.insertItem(item, at: 0)
+      self.statusMenu.insertItem(NSMenuItem.separator(), at: 1)
     }
   }
 
@@ -146,6 +147,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, MediaKeyTapDelegate {
       let display = Display(id, name: name)
 
       let monitorSubMenu: NSMenu = asSubMenu ? NSMenu() : self.statusMenu
+
+      self.statusMenu.insertItem(NSMenuItem.separator(), at: 0)
 
       let volumeSliderHandler = Utils.addSliderMenuItem(toMenu: monitorSubMenu,
                                                         forDisplay: display,
